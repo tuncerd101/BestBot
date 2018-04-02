@@ -27,7 +27,6 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-<<<<<<< HEAD
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 		
@@ -47,7 +46,6 @@ public class App extends ListenerAdapter {
 		case	"random num": 
 				break;
 		
-=======
 		String function = objMsg.getContentRaw();
 		function = function.replaceAll(botName + " ", "").toLowerCase();
 
