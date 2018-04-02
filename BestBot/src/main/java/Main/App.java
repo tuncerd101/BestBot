@@ -7,7 +7,8 @@ import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.hooks.ListenerAdapter;;
+import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import Main.Methods;
 
 public class App extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
@@ -27,22 +28,24 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-		if (objMsg.getContentRaw().equalsIgnoreCase(botName + " help")) {
-			sendPrivateMessage(objUser, "This is a test!");
+		String eingabe = objMsg.getContentRaw();
+		eingabe = eingabe.replaceAll(botName + " ", "").toLowerCase();
+		
+		
+		switch(eingabe) {
+		case 	"help": sendPrivateMessage(objUser, "This is a test!");
+				break;	
+		case	"ping": objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+				break;
+		case	"name": objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
+				break;
+		case	"flip": 
+				break;
+		case	"random num": 
+				break;
+		
 		}
-		if (objMsg.getContentRaw().equalsIgnoreCase(botName + " ping")) {
-			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
-		}
-		if (objMsg.getContentRaw().equalsIgnoreCase(botName + " name")) {
-			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-		}
-		if (objMsg.getContentRaw().equalsIgnoreCase(botName + " flip")) {
-			randomNumber = Methods.flipCoin();
-			if (randomNumber == 0)
-				objCh.sendMessage(" Heads").queue();
-			else
-				objCh.sendMessage(" Tails").queue();
-		}
+		
 	}
 
 	private void sendPrivateMessage(User user, final String string) {
