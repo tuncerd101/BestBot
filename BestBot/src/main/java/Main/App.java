@@ -31,6 +31,7 @@ public class App extends ListenerAdapter {
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 		
+		//int paramter =
 		
 		
 		

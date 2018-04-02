@@ -6,7 +6,7 @@ import net.dv8tion.jda.core.entities.MessageChannel;
 public class Methods {
 	
 	//generate random number between 0 und max
-	public static int randomNumber(int max) {
+	protected static int randomNumber(int max) {
 		int randomNumber = (int) (Math.random() * max);
 
 		return randomNumber;
@@ -20,5 +20,13 @@ public class Methods {
 			objCh.sendMessage("Heads").queue();
 		else
 			objCh.sendMessage("Tails").queue();
+	}
+	
+	protected static int convertParameter(String toConvert) {
+		int parameter = 0;
+		
+		
+		
+		return parameter;
 	}
 }
