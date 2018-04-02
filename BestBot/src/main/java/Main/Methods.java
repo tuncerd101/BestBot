@@ -1,6 +1,5 @@
 package Main;
 
-import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 
 public class Methods {
@@ -23,7 +22,15 @@ public class Methods {
 	}
 	
 	protected static int convertParameter(String toConvert) {
-		int parameter = 0;
+		int parameter = -1;
+		try {
+		int space_pos = toConvert.indexOf(" ");
+		
+		toConvert = toConvert.substring(space_pos + 1, toConvert.length()-1);
+		}finally {
+			
+		}
+		
 		
 		
 		
