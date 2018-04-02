@@ -8,7 +8,6 @@ import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import Main.Methods;
 
 public class App extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
@@ -28,27 +27,29 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-		String funktion = objMsg.getContentRaw();
-		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
-		
-		//int paramter =
-		
-		
-		
-		switch(funktion) {
-		case 	"help": sendPrivateMessage(objUser, "This is a test!");
-				break;	
-		case	"ping": objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
-				break;
-		case	"name": objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-				break;
-		case	"flip": Methods.coinFlip(objCh);
-				break;
-		case	"random num": 
-				break;
-		
+		String function = objMsg.getContentRaw();
+		function = function.replaceAll(botName + " ", "").toLowerCase();
+
+		// int paramter =
+
+		switch (function) {
+		case "help":
+			sendPrivateMessage(objUser, "This is a test!");
+			break;
+		case "ping":
+			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+			break;
+		case "name":
+			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
+			break;
+		case "flip":
+			Methods.coinFlip(objCh);
+			break;
+		case "random num":
+			break;
+
 		}
-		
+
 	}
 
 	private void sendPrivateMessage(User user, final String string) {
