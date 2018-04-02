@@ -8,7 +8,6 @@ import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import Main.Methods;
 
 public class App extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
@@ -28,6 +27,7 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
+<<<<<<< HEAD
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 		
@@ -47,8 +47,29 @@ public class App extends ListenerAdapter {
 		case	"random num": 
 				break;
 		
+=======
+		String function = objMsg.getContentRaw();
+		function = function.replaceAll(botName + " ", "").toLowerCase();
+
+		switch (function) {
+		case "help":
+			sendPrivateMessage(objUser, "This is a test!");
+			break;
+		case "ping":
+			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+			break;
+		case "name":
+			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
+			break;
+		case "flip":
+			Methods.coinFlip(objCh);
+			break;
+		case "random num":
+			break;
+
+>>>>>>> 6b46e8f3d9cbd48e272479c133247846fd8a7b5e
 		}
-		
+
 	}
 
 	private void sendPrivateMessage(User user, final String string) {
