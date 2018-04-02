@@ -39,7 +39,7 @@ public class App extends ListenerAdapter {
 				break;
 		case	"name": objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 				break;
-		case	"flip": 
+		case	"flip": Methods.coinFlip(objCh);
 				break;
 		case	"random num": 
 				break;
