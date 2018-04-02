@@ -28,11 +28,13 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-		String eingabe = objMsg.getContentRaw();
-		eingabe = eingabe.replaceAll(botName + " ", "").toLowerCase();
+		String funktion = objMsg.getContentRaw();
+		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 		
 		
-		switch(eingabe) {
+		
+		
+		switch(funktion) {
 		case 	"help": sendPrivateMessage(objUser, "This is a test!");
 				break;	
 		case	"ping": objCh.sendMessage(objUser.getAsMention() + "Pong").queue();

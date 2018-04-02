@@ -12,6 +12,7 @@ public class Methods {
 		return randomNumber;
 	}
 	
+	//prints a coin flip
 	protected static void coinFlip(MessageChannel objCh) {
 		int randomNumber = (int) (Math.random() * 2);
 		
