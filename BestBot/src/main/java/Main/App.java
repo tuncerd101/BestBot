@@ -28,30 +28,32 @@ public class App extends ListenerAdapter {
 		// String function = input.replaceAll(botName + " ", "").toLowerCase();
 
 		// Commands
-		switch (input) {
-		case "help":
-			Help.sendPrivateHelpMessage(objUser);
-			break;
-		case "ping":
-			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
-			break;
-		case "name":
-			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-			break;
-		case "random":
-			System.out.println("dwd");
-			String parameter = input.replace("random ", "");
-			Methods.randomNumber(objCh, parameter);
-			break;
-		case "flip":
-			Methods.coinFlip(objCh);
-			break;
-		case "random num":
-			break;
-		default:
-			objCh.sendMessage(
-					"If you need any help than type @BestBot help to get the list of all commands you can use!");
-			break;
+		if (input.contains(botName)) { // funktioniert nicht obwohl true zurück gegeben wird
+			switch (input) {
+			case "help":
+				Help.sendPrivateHelpMessage(objUser);
+				break;
+			case "ping":
+				objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+				break;
+			case "name":
+				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
+				break;
+			case "random":
+				System.out.println("dwd");
+				String parameter = input.replace("random ", "");
+				Methods.randomNumber(objCh, parameter);
+				break;
+			case "flip":
+				Methods.coinFlip(objCh);
+				break;
+			case "random num":
+				break;
+			default:
+				objCh.sendMessage(
+						"If you need any help than type @BestBot help to get the list of all commands you can use!");
+				break;
+			}
 		}
 	}
 }

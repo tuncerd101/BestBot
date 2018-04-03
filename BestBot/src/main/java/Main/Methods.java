@@ -14,7 +14,7 @@ public class Methods {
 
 		objCh.sendMessage("Max?").queue();
 		try {
-			max = Integer.parseInt(objMsg.getContentRaw()); // Bitte beheben!
+			// max = Integer.parseInt(objMsg.getContentRaw()); // Bitte beheben!
 		} catch (Exception invalidInput) {
 			objCh.sendMessage("Invalid Input.").queue();
 			objCh.sendMessage("Using default value: 10.").queue();
