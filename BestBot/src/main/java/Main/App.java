@@ -28,7 +28,7 @@ public class App extends ListenerAdapter {
 		String function = input.replaceAll(botName + " ", "").toLowerCase();
 
 		// Commands
-		if (input.contains(botName)) {
+		if (input.contains(botName) && !objUser.isBot()) {
 			switch (function) {
 			case "help":
 				Help.sendPrivateHelpMessage(objUser);
