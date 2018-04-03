@@ -25,16 +25,16 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		String input = objMsg.getContentRaw();
-		// String function = input.replaceAll(botName + " ", "").toLowerCase();
+		String function = input.replaceAll(botName + " ", "").toLowerCase();
 
 		// Commands
-		if (input.contains(botName)) { // funktioniert nicht obwohl true zurück gegeben wird
-			switch (input) {
+		if (input.contains(botName)) {
+			switch (function) {
 			case "help":
 				Help.sendPrivateHelpMessage(objUser);
 				break;
 			case "ping":
-				objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+				objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
 				break;
 			case "name":
 				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
