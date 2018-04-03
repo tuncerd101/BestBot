@@ -24,19 +24,11 @@ public class App extends ListenerAdapter {
 		MessageChannel objCh = event.getChannel();
 		Message objMsg = event.getMessage();
 
-		// Commands
-<<<<<<< HEAD
-		String funktion = objMsg.getContentRaw();
-		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
-
-		switch (funktion) {
-=======
 		String input = objMsg.getContentRaw();
-	//	String function = input.replaceAll(botName + " ", "").toLowerCase();
+		// String function = input.replaceAll(botName + " ", "").toLowerCase();
 
-
+		// Commands
 		switch (input) {
->>>>>>> master
 		case "help":
 			Help.sendPrivateHelpMessage(objUser);
 			break;
@@ -46,14 +38,11 @@ public class App extends ListenerAdapter {
 		case "name":
 			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 			break;
-<<<<<<< HEAD
-=======
 		case "random":
 			System.out.println("dwd");
 			String parameter = input.replace("random ", "");
 			Methods.randomNumber(objCh, parameter);
 			break;
->>>>>>> master
 		case "flip":
 			Methods.coinFlip(objCh);
 			break;
