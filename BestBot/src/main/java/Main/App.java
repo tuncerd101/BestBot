@@ -30,7 +30,6 @@ public class App extends ListenerAdapter {
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 
-		// int paramter =
 
 		switch (funktion) {
 		case "help":
@@ -54,20 +53,21 @@ public class App extends ListenerAdapter {
 
 		switch (function) {
 		case "help":
-			sendPrivateMessage(objUser, "This is a test!");
+			sendPrivateMessage(objUser, "This is a test!ddd");
 			break;
 		case "ping":
-			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
+			objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
 			break;
 		case "name":
 			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 			break;
+		case "random":
+			Methods.randomNumber(objCh, objMsg);
+			break;
 		case "flip":
 			Methods.coinFlip(objCh);
 			break;
-		case "random num":
-			break;
-
+		
 		}
 
 	}
