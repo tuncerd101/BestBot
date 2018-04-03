@@ -27,11 +27,11 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-		String function = objMsg.getContentRaw();
-		function = function.replaceAll(botName + " ", "").toLowerCase();
+		String input = objMsg.getContentRaw();
+	//	String function = input.replaceAll(botName + " ", "").toLowerCase();
 
 
-		switch (function) {
+		switch (input) {
 		case "help":
 			sendPrivateMessage(objUser, "This is a test!ddd");
 			break;
@@ -42,7 +42,9 @@ public class App extends ListenerAdapter {
 			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 			break;
 		case "random":
-			Methods.randomNumber(objCh, objMsg);
+			System.out.println("dwd");
+			String parameter = input.replace("random ", "");
+			Methods.randomNumber(objCh, parameter);
 			break;
 		case "flip":
 			Methods.coinFlip(objCh);
