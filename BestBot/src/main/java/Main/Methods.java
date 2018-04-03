@@ -4,32 +4,29 @@ import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 
 public class Methods {
-	
+
 	// generate random number between 1 und max
 	protected static void randomNumber(MessageChannel objCh, Message objMsg) {
 		int randomNumber = 0;
-		//default wert
+		// default wert
 		int max = 10;
-		
-		//TODO muss neue Nachricht einlesen und in max speichern
-		
-		
+
+		// TODO muss neue Nachricht einlesen und in max speichern
+
 		objCh.sendMessage("Max?").queue();
 		try {
 			max = Integer.parseInt(objMsg.getContentRaw());
-		} catch(Exception invalidInput) {
+		} catch (Exception invalidInput) {
 			objCh.sendMessage("Invalid Input.").queue();
 			objCh.sendMessage("Using default value: 10.").queue();
 		}
-			
 
-		
-		while(randomNumber == 0) {
+		while (randomNumber == 0) {
 			randomNumber = (int) (Math.random() * max);
 		}
-			
+
 		objCh.sendMessage(Integer.toString(randomNumber)).queue();
-		
+
 	}
 
 	// prints a coin flip
@@ -41,13 +38,10 @@ public class Methods {
 		else
 			objCh.sendMessage("Tails").queue();
 	}
-<<<<<<< HEAD
 
 	protected static int convertParameter(String toConvert) {
 		int parameter = 0;
 
 		return parameter;
 	}
-=======
->>>>>>> master
 }
