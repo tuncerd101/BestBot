@@ -33,7 +33,7 @@ public class App extends ListenerAdapter {
 
 		switch (input) {
 		case "help":
-			sendPrivateMessage(objUser, "This is a test!ddd");
+			sendPrivateMessage(objUser, "This is a test!");
 			break;
 		case "ping":
 			objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
