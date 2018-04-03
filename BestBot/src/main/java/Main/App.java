@@ -28,28 +28,30 @@ public class App extends ListenerAdapter {
 
 		// Commands
 		String input = objMsg.getContentRaw();
-	//	String function = input.replaceAll(botName + " ", "").toLowerCase();
+		String function = input.replaceAll(botName + " ", "").toLowerCase();
 
+		if(input.contains(botName)) {
 
-		switch (input) {
-		case "help":
-			sendPrivateMessage(objUser, "This is a test!");
-			break;
-		case "ping":
-			objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
-			break;
-		case "name":
-			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-			break;
-		case "random":
-			System.out.println("dwd");
-			String parameter = input.replace("random ", "");
-			Methods.randomNumber(objCh, parameter);
-			break;
-		case "flip":
-			Methods.coinFlip(objCh);
-			break;
+			switch (function) {
+			case "help":
+				sendPrivateMessage(objUser, "This is a test!");
+				break;
+			case "ping":
+				objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
+				break;
+			case "name":
+				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
+				break;
+			case "random":
+				System.out.println("dwd");
+				String parameter = function.replace("random ", "");
+				Methods.randomNumber(objCh, parameter);
+				break;
+			case "flip":
+				Methods.coinFlip(objCh);
+				break;
 		
+			}
 		}
 
 	}
