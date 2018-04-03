@@ -1,5 +1,6 @@
 package Main;
 
+import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 
 public class Methods {
@@ -9,6 +10,7 @@ public class Methods {
 		int randomNumber = 0;
 		// default wert
 		int max = 10;
+<<<<<<< HEAD
 
 		// TODO muss neue Nachricht einlesen und in max speichern
 
@@ -21,24 +23,25 @@ public class Methods {
 		}
 
 		while (randomNumber == 0) {
-			System.out.println(Parameter);
-
-			try {
-				max = Integer.parseInt(Parameter);
-				System.out.println(max);
-
-			} catch (Exception invalidInput) {
-				objCh.sendMessage("Invalid Parameter.").queue();
-				objCh.sendMessage("Using default value: 10.").queue();
-			}
-
-			while (randomNumber == 0) {
-				randomNumber = (int) (Math.random() * max);
-			}
-
-			objCh.sendMessage(Integer.toString(randomNumber)).queue();
-
+=======
+		System.out.println(Parameter);
+		
+		try {
+			max = Integer.parseInt(Parameter);
+			System.out.println(max);
+			
+		} catch(Exception invalidInput) {
+			objCh.sendMessage("Invalid Parameter.").queue();
+			objCh.sendMessage("Using default value: 10.").queue();
 		}
+		
+		while(randomNumber == 0) {
+>>>>>>> master
+			randomNumber = (int) (Math.random() * max);
+		}
+
+		objCh.sendMessage(Integer.toString(randomNumber)).queue();
+
 	}
 
 	// prints a coin flip
