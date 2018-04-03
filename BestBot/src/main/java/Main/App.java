@@ -18,8 +18,6 @@ public class App extends ListenerAdapter {
 
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
-		// Variables //
-		int randomNumber;
 		// Objects
 		String botName = event.getJDA().getSelfUser().getAsMention();
 		User objUser = event.getAuthor();
@@ -29,7 +27,6 @@ public class App extends ListenerAdapter {
 		// Commands
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
-
 
 		switch (funktion) {
 		case "help":
@@ -47,29 +44,6 @@ public class App extends ListenerAdapter {
 		case "random num":
 			break;
 		}
-
-		String function = objMsg.getContentRaw();
-		function = function.replaceAll(botName + " ", "").toLowerCase();
-
-		switch (function) {
-		case "help":
-			sendPrivateMessage(objUser, "This is a test!ddd");
-			break;
-		case "ping":
-			objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
-			break;
-		case "name":
-			objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-			break;
-		case "random":
-			Methods.randomNumber(objCh, objMsg);
-			break;
-		case "flip":
-			Methods.coinFlip(objCh);
-			break;
-		
-		}
-
 	}
 
 	private void sendPrivateMessage(User user, final String string) {
