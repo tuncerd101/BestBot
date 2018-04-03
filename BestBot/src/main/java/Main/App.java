@@ -25,7 +25,6 @@ public class App extends ListenerAdapter {
 		Message objMsg = event.getMessage();
 
 		// Commands
-<<<<<<< HEAD
 		String funktion = objMsg.getContentRaw();
 		funktion = funktion.replaceAll(botName + " ", "").toLowerCase();
 
@@ -57,32 +56,5 @@ public class App extends ListenerAdapter {
 			objCh.sendMessage(
 					"If you need any help than type @BestBot help to get the list of all commands you can use!");
 			break;
-=======
-		String input = objMsg.getContentRaw();
-		String function = input.replaceAll(botName + " ", "").toLowerCase();
-
-		if(input.contains(botName)) {
-
-			switch (function) {
-			case "help":
-				sendPrivateMessage(objUser, "This is a test!");
-				break;
-			case "ping":
-				objCh.sendMessage(objUser.getAsMention() + " Pong").queue();
-				break;
-			case "name":
-				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
-				break;
-			case "random":
-				System.out.println("dwd");
-				String parameter = function.replace("random ", "");
-				Methods.randomNumber(objCh, parameter);
-				break;
-			case "flip":
-				Methods.coinFlip(objCh);
-				break;
-		
-			}
->>>>>>> master
 		}
 }
