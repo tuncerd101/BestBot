@@ -30,7 +30,7 @@ public class App extends ListenerAdapter {
 
 		switch (funktion) {
 		case "help":
-			sendPrivateMessage(objUser, "This is a test!");
+			Help.sendPrivateHelpMessage(objUser);
 			break;
 		case "ping":
 			objCh.sendMessage(objUser.getAsMention() + "Pong").queue();
@@ -43,12 +43,10 @@ public class App extends ListenerAdapter {
 			break;
 		case "random num":
 			break;
+		default:
+			objCh.sendMessage(
+					"If you need any help than type @BestBot help to get the list of all commands you can use!");
+			break;
 		}
-	}
-
-	private void sendPrivateMessage(User user, final String string) {
-		user.openPrivateChannel().queue((channel) -> {
-			channel.sendMessage(string).queue();
-		});
 	}
 }
