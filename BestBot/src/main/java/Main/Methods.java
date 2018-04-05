@@ -5,30 +5,8 @@ import net.dv8tion.jda.core.entities.MessageChannel;
 public class Methods {
 
 	// generate random number between 1 und max
-	protected static void randomNumber(MessageChannel objCh, String parameter) {
-		int randomNumber = 0;
-		// default wert
-		int max = 10;
-
-		new randomNumber();// TODO muss neue Nachricht einlesen und in max speichern
-
-		/*
-		 * objCh.sendMessage("Max?").queue(); try { // Bitte beheben! } catch (Exception
-		 * invalidInput) { objCh.sendMessage("Invalid Input.").queue();
-		 * objCh.sendMessage("Using default value: 10.").queue(); }
-		 * 
-		 * while (randomNumber == 0) { System.out.println(parameter);
-		 * 
-		 * try { max = Integer.parseInt(parameter); System.out.println(max);
-		 * 
-		 * } catch (Exception invalidInput) {
-		 * objCh.sendMessage("Invalid Parameter.").queue();
-		 * objCh.sendMessage("Using default value: 10.").queue(); }
-		 * 
-		 * while (randomNumber == 0) { randomNumber = (int) (Math.random() * max); }
-		 * 
-		 * objCh.sendMessage(Integer.toString(randomNumber)).queue(); }
-		 */
+	protected static void randomNumber() {
+		new randomNumber();
 
 	}
 
@@ -40,11 +18,5 @@ public class Methods {
 			objCh.sendMessage("Heads").queue();
 		else
 			objCh.sendMessage("Tails").queue();
-	}
-
-	protected static int convertParameter(String toConvert) {
-		int parameter = 0;
-
-		return parameter;
 	}
 }

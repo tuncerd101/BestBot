@@ -52,10 +52,7 @@ public class App extends ListenerAdapter {
 				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 				break;
 			case "random":
-				// System.out.println("dwd");
-				// String [] command = Methods.breakCommand()
-				// Methods.randomNumber(objCh, input);
-				new randomNumber();
+				Methods.randomNumber();
 				break;
 			case "flip":
 				Methods.coinFlip(objCh);
