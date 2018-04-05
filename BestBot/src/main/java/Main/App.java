@@ -17,13 +17,13 @@ public class App extends ListenerAdapter {
 		CommandClientBuilder client = new CommandClientBuilder();
 		EventWaiter waiter = new EventWaiter();
 		String ownerId = "12";
-		// JDA jda = new
-		// JDABuilder(AccountType.BOT).setToken(Settings.token).buildBlocking();
+
 		client.setOwnerId(ownerId);
 		client.addCommand(new randomNumber());
-		// jda.addEventListener(new App());
+
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(Settings.token).addEventListener(waiter)
 				.addEventListener(client.build()).buildAsync();
+
 		jda.addEventListener(new App());
 	}
 
@@ -51,16 +51,8 @@ public class App extends ListenerAdapter {
 			case "name":
 				objCh.sendMessage("My name is " + botName + ". I'm here to help!").queue();
 				break;
-			case "random":
-				// System.out.println("dwd");
-				// String [] command = Methods.breakCommand()
-				// Methods.randomNumber(objCh, input);
-				new randomNumber();
-				break;
 			case "flip":
 				Methods.coinFlip(objCh);
-				break;
-			case "random num":
 				break;
 			default:
 				objCh.sendMessage(
