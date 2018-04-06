@@ -8,7 +8,7 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
-public class App extends ListenerAdapter {
+public class Bot extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
 		CommandClientBuilder client = new CommandClientBuilder();
 		EventWaiter waiter = new EventWaiter();
@@ -20,6 +20,6 @@ public class App extends ListenerAdapter {
 		JDA jda = new JDABuilder(AccountType.BOT).setToken(Settings.token).addEventListener(waiter)
 				.addEventListener(client.build()).buildAsync();
 
-		jda.addEventListener(new App());
+		jda.addEventListener(new Bot());
 	}
 }
