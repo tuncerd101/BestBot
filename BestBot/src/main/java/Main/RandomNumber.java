@@ -10,7 +10,7 @@ public class RandomNumber extends Command {
 	public RandomNumber() {
 		this.name = "random";
 		this.help = "Make a decision";
-		this.arguments = "<item> <item> ...";
+		this.arguments = "<number>";
 		this.guildOnly = false;
 	}
 
@@ -22,15 +22,15 @@ public class RandomNumber extends Command {
 			String[] items = event.getArgs().split("\\s+");
 
 			int randomnumber = 0;
-			
-			if(StringUtils.isNumeric(items[0]) == true) {
+
+			if (StringUtils.isNumeric(items[0]) == true) {
 				int max = Integer.parseInt(items[0]);
-				//solange neue zahl bis != 0
-				while(randomnumber == 0) {
-					randomnumber = (int)(Math.random() * max);
+				// solange neue zahl bis != 0
+				while (randomnumber == 0) {
+					randomnumber = (int) (Math.random() * max);
 				}
 				event.getChannel().sendMessage(Integer.toString(randomnumber)).queue();
-				
+
 			} else {
 				event.getChannel().sendMessage("Invalid Parameter.").queue();
 			}
