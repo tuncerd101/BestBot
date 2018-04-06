@@ -18,8 +18,5 @@ public class Bot extends ListenerAdapter {
 
 		new JDABuilder(AccountType.BOT).setToken(Settings.token).addEventListener(waiter)
 				.addEventListener(client.build()).buildAsync();
-
-		// Das ist ein Test
-		// und jetzt
 	}
 }
