@@ -20,5 +20,6 @@ public class Bot extends ListenerAdapter {
 				.addEventListener(client.build()).buildAsync();
 
 		// Das ist ein Test
+		// und jetzt
 	}
 }
