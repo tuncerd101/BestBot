@@ -5,9 +5,9 @@ import org.apache.commons.lang3.StringUtils;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 
-public class randomNumber extends Command {
+public class RandomNumber extends Command {
 
-	public randomNumber() {
+	public RandomNumber() {
 		this.name = "random";
 		this.help = "Make a decision";
 		this.arguments = "<item> <item> ...";
