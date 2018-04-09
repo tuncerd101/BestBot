@@ -1,19 +1,26 @@
-package HotsMain;
+package Hots.HotsMain;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import HotsTalentTiers.*;
+import Hots.HotsTalentTiers.Tier1;
+import Hots.HotsTalentTiers.Tier2;
+import Hots.HotsTalentTiers.Tier3;
+import Hots.HotsTalentTiers.Tier4;
+import Hots.HotsTalentTiers.Tier5;
+import Hots.HotsTalentTiers.Tier6;
+import Hots.HotsTalentTiers.Tier7;
 
 public class Heroes {
-	
-	private	static List<String> t1 = new ArrayList<>();
+
+	private static List<String> t1 = new ArrayList<>();
 	private static List<String> t2 = new ArrayList<>();
 	private static List<String> t3 = new ArrayList<>();
-	private	static List<String> t4 = new ArrayList<>();
-	private	static List<String> t5 = new ArrayList<>();
-	private	static List<String> t6 = new ArrayList<>();
-	private	static List<String> t7 = new ArrayList<>();
-	
+	private static List<String> t4 = new ArrayList<>();
+	private static List<String> t5 = new ArrayList<>();
+	private static List<String> t6 = new ArrayList<>();
+	private static List<String> t7 = new ArrayList<>();
+
 	public static Hero createAbathur() {
 		t1.add("Pressurized Glands");
 		t1.add("Survival Instincts");
@@ -41,12 +48,13 @@ public class Heroes {
 		t7.add("Evolution Complete");
 		t7.add("Hivemind");
 		t7.add("Locust Nest");
-		
-		return new Hero("Abathur", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
+
+		return new Hero("Abathur", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4),
+				new Tier5(t5), new Tier6(t6), new Tier7(t7)));
 	}
-	
+
 	public static Hero createAlarak() {
-		
+
 		t1.add("Sustaining Power");
 		t1.add("Extended Lightning");
 		t1.add("Ruthless Momentum");
@@ -68,9 +76,9 @@ public class Heroes {
 		t7.add("Deadly Charge");
 		t7.add("Last Laugh");
 		t7.add("Hasty Bargain");
-		return new Hero("Alarak", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
+		return new Hero("Alarak", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5),
+				new Tier6(t6), new Tier7(t7)));
 	}
-	
 
 	public static Hero createAlexstrasza() {
 
@@ -95,11 +103,12 @@ public class Heroes {
 		t7.add("On Ruby Wings");
 		t7.add("Ancient Flame");
 		t7.add("Blessing of the Red");
-		return new Hero("Alexstrasza", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
+		return new Hero("Alexstrasza", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4),
+				new Tier5(t5), new Tier6(t6), new Tier7(t7)));
 	}
-	
+
 	public static Hero createAna() {
-		
+
 		t1.add("Grenade Calibration");
 		t1.add("Piercing Darts");
 		t1.add("Detachable Box Magazine");
@@ -122,12 +131,13 @@ public class Heroes {
 		t7.add("Somnolent Doses");
 		t7.add("Dynamic SHooting");
 		t7.add("Custom Optics");
-		return new Hero("Ana", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
+		return new Hero("Ana", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5),
+				new Tier6(t6), new Tier7(t7)));
 
 	}
-	
+
 	public static Hero creatAnubarak() {
-		
+
 		t1.add("Resilient Scarabs");
 		t1.add("Nerubian Armor");
 		t1.add("Regneration Master");
@@ -150,13 +160,14 @@ public class Heroes {
 		t7.add("Cryptweave");
 		t7.add("Nullification Shield");
 		t7.add("Rewind");
-		return new Hero("Anub'arak", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
+		return new Hero("Anub'arak", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4),
+				new Tier5(t5), new Tier6(t6), new Tier7(t7)));
 
 	}
-	
-	//vorlage
+
+	// vorlage
 	public static Hero create() {
-		
+
 		t1.add("");
 		t1.add("");
 		t1.add("");
@@ -178,12 +189,10 @@ public class Heroes {
 		t7.add("");
 		t7.add("");
 		t7.add("");
-		
-		return new Hero("", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5), new Tier6(t6), new Tier7(t7)));
-		
+
+		return new Hero("", new Talents(new Tier1(t1), new Tier2(t2), new Tier3(t3), new Tier4(t4), new Tier5(t5),
+				new Tier6(t6), new Tier7(t7)));
+
 	}
-	
-	
-	
-	
+
 }
