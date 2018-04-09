@@ -14,7 +14,7 @@ public class Bot extends ListenerAdapter {
 		String ownerId = "12";
 
 		client.setOwnerId(ownerId);
-		client.addCommands(new RandomNumber(), new Ping(), new Flip());
+		client.addCommands(new RandomNumber(), new Flip());
 
 		new JDABuilder(AccountType.BOT).setToken(Settings.token).addEventListener(waiter)
 				.addEventListener(client.build()).buildAsync();
