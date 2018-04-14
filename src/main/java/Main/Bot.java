@@ -11,12 +11,13 @@ public class Bot extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
 		CommandClientBuilder client = new CommandClientBuilder();
 		EventWaiter waiter = new EventWaiter();
-		String ownerId = "12";
+		String ownerId = "11";
+		String token = Settings.getSettings();
 
 		client.setOwnerId(ownerId);
 		client.addCommands(new RandomNumber(), new Flip());
 
-		new JDABuilder(AccountType.BOT).setToken(Settings.token).addEventListener(waiter)
-				.addEventListener(client.build()).buildAsync();
+		new JDABuilder(AccountType.BOT).setToken(token).addEventListener(waiter).addEventListener(client.build())
+				.buildAsync();
 	}
 }
